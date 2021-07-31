@@ -24,5 +24,7 @@ jobs:
       - name: CMake Configure
         run: mkdir build && cd build && cmake ..
       - name: Build
-        run: cd build && make
-      - run: ls
+        run: cd build && cmake --build . --config Release
+      - run: ls build
+      - name: Run
+        run: ./build/HelloWorld
